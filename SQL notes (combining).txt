@@ -1,0 +1,45 @@
+*********Combining 2 information from different folders****INNER JOIN****
+SELECT
+	player_attributes.player_api_id,		#player_api_id, date, overall_rating is within player_attributes
+	player_attributes.date,
+	player_attributes.overall_rating,
+	player.player_name				#player_name is within player
+FROM
+	Player_attributes
+	inner join player on player_attributes.player_api_id = player.player_api_id			inner join ______ on ___=____     the equal matches
+
+
+*********REDUCE TEXT*****************
+SELECT
+	a.player_api_id,			
+	a.date,
+	a.overall_rating,
+	b.player_name				
+FROM
+	Player_attributes a										_____ __
+	inner join player b on player_attributes.player_api_id = player.player_api_id			inner join ______ __
+
+
+*********Grouping*****************
+SELECT
+	a.player_api_id,			
+	sum(a.overall_rating) as rating
+	b.player_name				
+FROM
+	Player_attributes a										
+	inner join player b on player_attributes.player_api_id = player.player_api_id			
+	group by a.player_api_id,
+	b.player_name
+
+*********HAVING*****************
+SELECT
+	a.player_api_id,			
+	sum(a.overall_rating) as rating
+	b.player_name				
+FROM
+	Player_attributes a										
+	inner join player b on player_attributes.player_api_id = player.player_api_id			
+	group by a.player_api_id,
+	b.player_name
+	having rating > 85
+

@@ -1,0 +1,85 @@
+********SPECIFIC INFO******
+SELECT
+	player_name as name , birthday			player_name in this run will now be called name. player_name and birthday were called to print
+FROM							
+	player						player is the name of the file we are looking into
+
+*********FULL INFO************
+
+SELECT
+	*						calls all the information to be printed FROM player
+FROM
+	player
+
+********SPECIFIC INFO name change with a SPACE*********
+
+SELECT
+	player_name as 'full name' , birthday		player_name is now shown as full name because we used ''
+FROM							
+	player						player is the name of the file we are looking into
+
+
+*************WHERE (more specific)*****************
+
+SELECT
+	*			
+FROM							
+	player						
+	where weight>180				grabs players with weight that is more than 180
+--------------------another example-----------------
+
+SELECT
+	*			
+FROM							
+	player						
+	where player_name like 'Messi'				Grabs name with messi. 
+--------------------another example-----------------
+SELECT
+	*			
+FROM							
+	player						
+	where player_name like 'Messi%'				Grabs ALL name that STARTS with messi. 
+--------------------another example-----------------
+SELECT
+	*			
+FROM							
+	player						
+	where player_name like '%Messi'				Grabs ALL name that ENDS starts with messi. 
+--------------------another example-----------------
+SELECT
+	*			
+FROM							
+	player						
+	where player_name like '%Messi%'			Grabs ALL name that STARTS or ENDS starts with messi. 
+--------------------another example-----------------
+SELECT
+	*			
+FROM							
+	player						
+	where player_name like 'M_s%'				Grabs ALL name start(%) with M and one letter between(_) M and S 
+
+************in (Have to be exact or will not find)********
+
+SELECT
+	*			
+FROM							
+	player						
+	where player_name in ('Cristianio Ronaldo')		All names that have those exact characters
+
+
+************between (integers)********
+
+SELECT
+	*			
+FROM							
+	player						
+	where player_name between 180 and 190		
+
+*********order*********************
+
+
+SELECT
+	*			
+FROM							
+	player						
+	order by weight						order by acending order (we can use desc after weight to get descending order)
